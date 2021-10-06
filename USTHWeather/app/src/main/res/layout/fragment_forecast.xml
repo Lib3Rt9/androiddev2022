@@ -11,4 +11,28 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/cloudy"
+        android:layout_width="28px"
+        android:layout_height="28px" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/rainnshowers"
+        android:layout_width="28px"
+        android:layout_height="28px" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/storm"
+        android:layout_width="28px"
+        android:layout_height="28px" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@drawable/chanceofstorm"
+        android:layout_width="28px"
+        android:layout_height="28px" />
+
 </FrameLayout>

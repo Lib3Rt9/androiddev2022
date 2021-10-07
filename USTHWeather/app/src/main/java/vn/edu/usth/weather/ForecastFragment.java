@@ -65,12 +65,14 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        // View v = inflater.inflate(R.layout.fragment_forecast, container, false);
-        // v.setBackgroundColor(0x80FF0000);
-        // return v;
-        LinearLayout liLa = new LinearLayout(getActivity());
+        View v = inflater.inflate(R.layout.fragment_forecast, container, false);
+        v.setBackgroundColor(0x00FF0000);
+        return v;
+
+
+        /*LinearLayout liLa = new LinearLayout(getActivity());
         liLa.setBackgroundColor(0x8000BFFF);
-        liLa.setOrientation(LinearLayout.HORIZONTAL);
+        liLa.setOrientation(LinearLayout.VERTICAL);*/
 
         // ------------------------
         /*
@@ -96,6 +98,7 @@ public class ForecastFragment extends Fragment {
         liLa.addView(rainyy);
 */
 
+/*
 
         // ------------------------
         // Try set another state
@@ -228,7 +231,8 @@ public class ForecastFragment extends Fragment {
         liLa.addView(scatteredThunderstorms);
         liLa.addView(Wed_2_r);
 
-
-        return liLa;
+          return liLa;
+*/
     }
+
 }

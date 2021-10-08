@@ -7,16 +7,27 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 
+
 public class WeatherActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
         ForecastFragment FcFr = ForecastFragment.newInstance("", "");
+        WeatherFragment WtFr = WeatherFragment.newInstance("", "");
 
         // Add the fragment to the 'container' FrameLayout
+        /*
         getSupportFragmentManager().beginTransaction().add(
-            R.id.container, FcFr).commit();
+                R.id.container, FcFr).commit();
+                */
+
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.frTag, WtFr).commit();
+
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.fcFr, FcFr).commit();
     }
     
     @Override

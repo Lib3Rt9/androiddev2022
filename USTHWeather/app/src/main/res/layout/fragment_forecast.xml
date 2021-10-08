@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".ForecastFragment"
     android:orientation="vertical"
+    android:background="#dfdfff"
     >
 
 
@@ -29,15 +30,18 @@
         android:orientation="horizontal"
         />
     -->
+
+    <!--
+    put the line below in every Linear Layout tag:
+
+    android:background="dfdfff"-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -75,8 +79,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -114,8 +116,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -153,8 +153,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -192,8 +190,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -231,8 +227,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -270,8 +264,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -309,8 +301,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -348,8 +338,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"
@@ -389,8 +377,6 @@
         android:layout_marginBottom="15dp"
         android:paddingBottom="60dp"
         android:orientation="horizontal"
-        android:background="#dfdfff"
-
         >
         <TextView
             android:layout_width="80dp"

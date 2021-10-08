@@ -418,6 +418,6 @@
             android:textSize="15.5dp"
             android:textStyle="bold"
             />
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>

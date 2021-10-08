@@ -42,10 +42,10 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
+            android:paddingStart="20dp"
             android:paddingEnd="15dp"
             android:paddingVertical="15dp"
-            android:textAlignment="center"
+
             android:text="Mon"
             android:textSize="15.5dp"
             android:textStyle="bold"
@@ -71,7 +71,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:orientation="horizontal"
@@ -81,10 +81,10 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
+            android:paddingStart="20dp"
             android:paddingEnd="15dp"
             android:paddingVertical="15dp"
-            android:textAlignment="center"
+
             android:text="Tue"
             android:textSize="15.5dp"
             android:textStyle="bold"
@@ -105,58 +105,319 @@
             android:textStyle="bold"
             />
     </LinearLayout>
-    <!--   Wednesday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Thursday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Friday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Saturday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Sunday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Monday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Tuesday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!--   Wednesday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
 
+    <!--   Wednesday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
     <LinearLayout
-        android:id="@+id/tuesday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
 
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Tue"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
             android:paddingVertical="15dp"
-            android:paddingHorizontal="25dp"
-            android:textAlignment="center"
-            />
 
+            android:text="Wed"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
         <ImageView
-            android:id="@+id/day02"
-            android:layout_width="50dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:src="@drawable/storm" />
-
-        <LinearLayout
-            android:id="@+id/tuesday_status"
-            android:layout_width="wrap_content"
+            android:src="@drawable/rainnshowers"
+            />
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:paddingHorizontal="25dp"
-            >
+            android:paddingStart="25dp"
+            android:text="Rain\n22C - 23C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Showers"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="24°C-30°C" />
-        </LinearLayout>
+    <!--   Thursday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Thu"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/chanceofstorm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Scattered Showers\n22C - 27C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Friday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Fri"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/cloudy"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Mostly Cloudy\n22C - 30C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Saturday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Sat"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/cloudy"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Partly Cloudy\n24C - 31C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Sunday #1 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Sun"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/storm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Thunderstorms\n25C - 28C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Monday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Mon"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/chanceofstorm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Scattered Thunderstorms\n24C - 27C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Tuesday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Tue"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/rainnshowers"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Showers\n24C - 26C"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!--   Wednesday #2 +++++++++++++++++++++++++++++++++++++++++++++ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="60dp"
+        android:orientation="horizontal"
+        android:background="#dfdfff"
+
+        >
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+            android:paddingVertical="15dp"
+
+            android:text="Wed"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/chanceofstorm"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="25dp"
+            android:text="Scattered Thunderstorms\n23C - 27CC"
+            android:textSize="15.5dp"
+            android:textStyle="bold"
+            />
     </LinearLayout>
 
     </LinearLayout>

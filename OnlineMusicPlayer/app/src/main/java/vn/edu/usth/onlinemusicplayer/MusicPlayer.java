@@ -31,19 +31,19 @@ public class MusicPlayer extends AppCompatActivity {
         setContentView(R.layout.activity_music_player);
         listView = findViewById(R.id.listViewSong);
         /*call runtimePermission method */
-        /*runtimePermission();*/
+        runtimePermission();
 
         /*initialize the listView */
 
     }
 
     /*Permission ---------------------------------------------------------------------------------*/
-    /*public void runtimePermission() {
+    public void runtimePermission() {
         Dexter.withContext(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                        displaySong(); *//* call displaySong method *//*
+                        displaySong(); /* call displaySong method */
                     }
 
                     @Override
@@ -90,7 +90,7 @@ public class MusicPlayer extends AppCompatActivity {
                         permissionToken.continuePermissionRequest();
                     }
                 }).check();
-    }*/
+    }
     /*Permission ---------------------------------------------------------------------------------*//*
 
     /*Find song in EXTERNAL STORAGE --------------------------------------------------------------*/

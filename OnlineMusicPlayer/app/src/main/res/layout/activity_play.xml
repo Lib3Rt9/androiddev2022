@@ -25,13 +25,13 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:padding="10dp"
             android:singleLine="true"
-            android:src="@drawable/showing"
+            android:src="@drawable/playing"
             android:text="Loading song................."
             android:textAlignment="center"
             android:textSize="22dp"
             android:textStyle="italic" />
-<!--
 
+<!--
         <com.gauravk.audiovisualizer.visualizer.BlastVisualizer
             xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:id="@+id/circleline"
@@ -41,13 +41,14 @@
             app:avDensity="0.8"
             app:avSpeed="normal"
             app:avType="fill" />
--->
+        -->
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
             android:id="@+id/imgView"
-            android:layout_marginBottom="8dp"/>
+            android:layout_width="311dp"
+            android:layout_height="306dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/playing"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -110,38 +111,38 @@
                 android:background="@drawable/ic_baseline_pause_24" />
 
             <Button
-                android:id="@+id/buttonForward"
+                android:id="@+id/buttonNext"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/buttonPlay"
-                android:background="@drawable/ic_baseline_fast_forward_24" />
-
-            <Button
-                android:id="@+id/buttonRewind"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_toLeftOf="@id/buttonPlay"
-                android:background="@drawable/ic_baseline_fast_rewind_24" />
-
-            <Button
-                android:id="@+id/buttonNext"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/buttonForward"
                 android:background="@drawable/ic_baseline_skip_next_24" />
 
             <Button
                 android:id="@+id/buttonPrev"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/buttonPlay"
+                android:background="@drawable/ic_baseline_skip_previous_24" />
+
+            <Button
+                android:id="@+id/buttonForward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/buttonNext"
+                android:background="@drawable/ic_baseline_fast_forward_24" />
+
+            <Button
+                android:id="@+id/buttonRewind"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@id/buttonRewind"
-                android:background="@drawable/ic_baseline_skip_previous_24" />
+                android:layout_toLeftOf="@id/buttonPrev"
+                android:background="@drawable/ic_baseline_fast_rewind_24" />
 
         </RelativeLayout>
     </LinearLayout>

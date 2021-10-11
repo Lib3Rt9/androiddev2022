@@ -13,35 +13,60 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.usth.onlinemusicplayer.databinding.ActivityMainBinding;
+import vn.edu.usth.onlinemusicplayer.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String[] items;
 
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.listView);
         runtimePermission();
         displaySong();
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = binding.viewPager;
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = binding.tabs;
+        tabs.setupWithViewPager(viewPager);
+        FloatingActionButton fab = binding.fab;
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
+
 
     /*Permission ---------------------------------------------------------------------------------*/
     public void runtimePermission() {
@@ -112,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 String songName = (String) listView.getItemAtPosition(i);
 
                 startActivity(new Intent(getApplicationContext(), PlayActivity.class)
-                .putExtra("songs", songsInLib)
+                        .putExtra("songs", songsInLib)
                         .putExtra("song_Name", songName)
                         .putExtra("position", i)
                 );
@@ -147,5 +172,4 @@ public class MainActivity extends AppCompatActivity {
             return vw;
         }
     }
-
 }

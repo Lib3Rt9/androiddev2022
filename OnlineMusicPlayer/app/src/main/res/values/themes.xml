@@ -74,4 +74,13 @@
         <item name="cornerFamilyTopLeft">rounded</item>
         <item name="android:bottomBright">@color/white</item>
     </style>
+
+    <style name="Theme.OnlineMusicPlayer.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.OnlineMusicPlayer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OnlineMusicPlayer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

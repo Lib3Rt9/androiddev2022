@@ -65,7 +65,8 @@ public class PlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        getSupportActionBar().setTitle("PPPPPPPPPPPPP");
+        // getSupportActionBar().setTitle("PPPPPPPPPPPPP");
+        getSupportActionBar().setTitle("Local Music");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 

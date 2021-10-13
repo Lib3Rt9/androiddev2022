@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String[] items;
-    AdapterView search;
 
     /*private ActivityMainBinding binding;*/
 
@@ -48,12 +47,11 @@ public class MainActivity extends AppCompatActivity {
         runtimePermission();
         displaySong();
 
-        /*search = (AdapterView) findViewById(R.id.floatingSearchButtonn);*/
         FloatingActionButton mFab = (FloatingActionButton) findViewById(R.id.floatingSearchButtonn);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PlayOnline.class));
+                startActivity(new Intent(getApplicationContext(), OnlineMusic.class));
             }
         });
     }

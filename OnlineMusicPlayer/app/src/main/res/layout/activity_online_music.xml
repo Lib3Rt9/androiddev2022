@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnlineMusic"
+    android:background="@drawable/listbgrd">
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Try: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" />
+
+
+    <RelativeLayout
+        android:layout_width="230dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="500dp"
+        android:orientation="horizontal">
+
+
+        <!--Button for playing audio-->
+        <Button
+            android:id="@+id/idBtnPlay"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ic_baseline_play_arrow_24" />
+
+        <!--Button for pausing the audio-->
+        <Button
+            android:id="@+id/idBtnPause"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_baseline_pause_24" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="268dp"
+        android:text="Apply" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="80dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="170dp"
+        android:gravity="center"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="30dp"
+        android:text="Save" />
+
+    <SeekBar
+        android:id="@+id/seekBarOnl"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/songStartOnl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="430dp"
+        android:layout_toLeftOf="@+id/seekBarOnl"
+        android:text="0:20"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/songStopOnl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="430dp"
+        android:layout_toRightOf="@+id/seekBarOnl"
+        android:text="5:15"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+</RelativeLayout>
+
+<!-- first demo:    https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3  -->

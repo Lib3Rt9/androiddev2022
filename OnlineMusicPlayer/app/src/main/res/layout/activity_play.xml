@@ -45,8 +45,8 @@
 
         <ImageView
             android:id="@+id/imgView"
-            android:layout_width="311dp"
-            android:layout_height="306dp"
+            android:layout_width="310dp"
+            android:layout_height="310dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/playing"/>
 

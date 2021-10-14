@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.SeekBar;
@@ -35,14 +36,14 @@ public class OnlineMusic extends AppCompatActivity {
     private EditText editText;
     private Button applyButton;
     private Button saveButton;
-    private Switch switch1;
+    private Switch switch1, switch3;
 
     public static final String SHARED_PREFS = "sharePrefs";
     public static final String TEXT = "text";
     public static final String SWITCH1 = "switch1";
 
     public String text;
-    private boolean switchOnOff;
+    private boolean switchOnOff, switchPlay;
 
     // creating a variable for
     // button and media player
@@ -76,8 +77,9 @@ public class OnlineMusic extends AppCompatActivity {
         applyButton = (Button) findViewById(R.id.applyBtn);
         saveButton = (Button) findViewById(R.id.saveBtn);
         switch1 = (Switch) findViewById(R.id.switch1);
+        switch3 = (Switch) findViewById(R.id.switch3);
 
-        seekMusicBarOnl = findViewById(R.id.seekBarOnl);
+        // seekMusicBarOnl = findViewById(R.id.seekBarOnl);
 
         updateSeekBarOnl = new Thread() {
             @Override
@@ -170,13 +172,37 @@ public class OnlineMusic extends AppCompatActivity {
         loadData();
         updateViews();
 
+
+        switch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true) {
+                    playAudio();
+                }
+                else {
+                    mediaPlayer.stop();
+                    mediaPlayer.reset();
+                    mediaPlayer.release();
+                    Toast.makeText(OnlineMusic.this, "Audio is stopped", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        // This two method below cause so many error
+
         // setting on click listener for our play and pause buttons.
+/*
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // calling method to play audio.
-                playAudio();
+                if (mediaPlayer.isPlaying()) {
+                    // calling method to play audio.
+                    playAudio();
+
+                }
+
             }
+
         });
 
         pauseBtn.setOnClickListener(new View.OnClickListener() {
@@ -196,6 +222,7 @@ public class OnlineMusic extends AppCompatActivity {
                     // when media player is paused.
                     Toast.makeText(OnlineMusic.this, "Audio has been paused", Toast.LENGTH_SHORT).show();
                 } else {
+
                     // this method is called when media
                     // player is not playing.
                     Toast.makeText(OnlineMusic.this, "Audio has not played", Toast.LENGTH_SHORT).show();
@@ -203,6 +230,8 @@ public class OnlineMusic extends AppCompatActivity {
             }
 
         });
+*/
+
     }
 
     public void saveData() {
@@ -233,7 +262,9 @@ public class OnlineMusic extends AppCompatActivity {
         switch1.setChecked(switchOnOff); // switchOnOff true -> check
     }
 
+
     private void playAudio() {
+
 
         String audioUrl = text;
                 // "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
@@ -244,6 +275,7 @@ public class OnlineMusic extends AppCompatActivity {
         // below line is use to set the audio
         // stream type for our media player.
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
 
         // below line is use to set our
         // url to our media player.

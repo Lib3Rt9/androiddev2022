@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     String[] items; // names of songs = items
 
-    /*private ActivityMainBinding binding;*/
+    /* private ActivityMainBinding binding; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 }).check();
 
         // if need only one permission, see comments below
-                /*.withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                /*
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new PermissionListener() {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
@@ -95,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
                         permissionToken.continuePermissionRequest();
                     }
-                }).check(); */
+                }).check();
+                */
     }
     // Permission ----------------------------------------------------------------------------------
 

@@ -257,7 +257,8 @@ public class OnlineMusic extends AppCompatActivity {
         editor.putBoolean(SWITCH1, switch1.isChecked());
 
         // apply to check
-        // only checked is able to save data
+        // only checked is able to save data for displaying next time
+        // put no effect on saving function
         editor.apply();
 
         // Toast message

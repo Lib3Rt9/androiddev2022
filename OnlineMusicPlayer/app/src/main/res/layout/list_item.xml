@@ -48,3 +48,5 @@
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+
+<!-- This file is used for showing the song and details in list view -->

@@ -68,10 +68,13 @@ public class OnlineMusic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_music);
 
+        // setting title and action bar
         getSupportActionBar().setTitle("Online Music");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        // connect the button with xml file
+        // so many ones
         txtVw = (TextView) findViewById(R.id.txtVw);
         editText = (EditText) findViewById(R.id.source);
         applyButton = (Button) findViewById(R.id.applyBtn);
@@ -81,14 +84,19 @@ public class OnlineMusic extends AppCompatActivity {
 
         // seekMusicBarOnl = findViewById(R.id.seekBarOnl);
 
+        // update seek bar, but it not work
         updateSeekBarOnl = new Thread() {
             @Override
             public void run() {
+
+                // extract value
                 int totalDuration = mediaPlayer.getDuration();
                 int currentPosition = 0;
 
+                // check and update every second
                 while (currentPosition < totalDuration) {
                     try {
+                        // sleep a little bit then check again
                         sleep(500);
                         currentPosition = mediaPlayer.getCurrentPosition();
                         seekMusicBarOnl.setProgress(currentPosition);
@@ -110,7 +118,7 @@ public class OnlineMusic extends AppCompatActivity {
                 PorterDuff.Mode.SRC_IN);
 */
 
-/*
+/*  This somehow cause error!!!!!!!!!!!!!!!!!!!!!!
 
         seekMusicBarOnl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -150,11 +158,11 @@ public class OnlineMusic extends AppCompatActivity {
 */
 
 
-        // initializing our buttons
+        // initializing buttons
         playBtn = findViewById(R.id.idBtnPlay);
         pauseBtn = findViewById(R.id.idBtnPause);
 
-        // setting on click listener for upper buttons
+        // setting on click listener for APPLY button
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +170,7 @@ public class OnlineMusic extends AppCompatActivity {
             }
         });
 
+        // setting on click listener for SAVE button
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,13 +182,16 @@ public class OnlineMusic extends AppCompatActivity {
         updateViews();
 
 
+        // this switch is used to play and stop song
         switch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true) {
+
+                if (isChecked == true) { // checked = play
                     playAudio();
                 }
-                else {
+
+                else { // not checked = stop
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -240,10 +252,14 @@ public class OnlineMusic extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(TEXT, txtVw.getText().toString());
+
         // switch -> not checked = false; checked = true
         editor.putBoolean(SWITCH1, switch1.isChecked());
+
         // apply to check
+        // only checked is able to save data
         editor.apply();
+
         // Toast message
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
@@ -264,7 +280,6 @@ public class OnlineMusic extends AppCompatActivity {
 
 
     private void playAudio() {
-
 
         String audioUrl = text;
                 // "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
@@ -293,7 +308,8 @@ public class OnlineMusic extends AppCompatActivity {
         // below line is use to display a toast message.
         Toast.makeText(this, "Audio started playing..", Toast.LENGTH_SHORT).show();
     }
-/*
+
+/* it is not work??????????
 
     public String createTimeOnl(int duration) {
         String time = "";

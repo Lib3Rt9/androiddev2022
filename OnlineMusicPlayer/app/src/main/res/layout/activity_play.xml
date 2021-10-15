@@ -31,6 +31,7 @@
             android:textSize="22dp"
             android:textStyle="italic" />
 
+        <!--Tried to add visualizer but cause error-->
 <!--
         <com.gauravk.audiovisualizer.visualizer.BlastVisualizer
             xmlns:custom="http://schemas.android.com/apk/res-auto"

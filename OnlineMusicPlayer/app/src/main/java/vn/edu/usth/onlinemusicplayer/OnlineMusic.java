@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -32,27 +33,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 
 public class OnlineMusic extends AppCompatActivity {
-    private TextView txtVw;
-    private EditText editText;
-    private Button applyButton;
-    private Button saveButton;
-    private Switch switch1, switch3;
+    private TextView txtVw; // text on top
+    private EditText editText; // edit source - type URL
+    private Button applyButton; // apply
+    private Button saveButton; // save
+    private Switch switch1, switch3; // switch
 
-    public static final String SHARED_PREFS = "sharePrefs";
-    public static final String TEXT = "text";
-    public static final String SWITCH1 = "switch1";
+    public static final String SHARED_PREFS = "sharePrefs"; // save URL typed
+    public static final String TEXT = "text"; // text?
+    public static final String SWITCH1 = "switch1"; // switch1, just for fun
 
-    public String text;
-    private boolean switchOnOff, switchPlay;
+    public String text; // text??
+    private boolean switchOnOff, switchPlay; // ... no comment
 
     // creating a variable for
     // button and media player
-    Button playBtn, pauseBtn;
-    MediaPlayer mediaPlayer;
-    SeekBar seekMusicBarOnl;
+    Button playBtn, pauseBtn; // this buttons is not in use anymore
+    MediaPlayer mediaPlayer; // player
+    SeekBar seekMusicBarOnl; // seek bar, not really work
 
-    TextView songStartOnl, songStopOnl;
-    Thread updateSeekBarOnl;
+    TextView songStartOnl, songStopOnl; // timer
+    Thread updateSeekBarOnl; // seek bar, not really work
+
+    // library
+    TextView url1, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12, url13, url14,
+            url15, url16, url17, url18, url19, url20, url21, url22, url23, url24, url25;
+
 
     // Back to home :v
     @Override
@@ -81,6 +87,7 @@ public class OnlineMusic extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.saveBtn);
         switch1 = (Switch) findViewById(R.id.switch1);
         switch3 = (Switch) findViewById(R.id.switch3);
+
 
         // seekMusicBarOnl = findViewById(R.id.seekBarOnl);
 
@@ -159,8 +166,8 @@ public class OnlineMusic extends AppCompatActivity {
 
 
         // initializing buttons
-        playBtn = findViewById(R.id.idBtnPlay);
-        pauseBtn = findViewById(R.id.idBtnPause);
+        //playBtn = findViewById(R.id.idBtnPlay);
+        //pauseBtn = findViewById(R.id.idBtnPause);
 
         // setting on click listener for APPLY button
         applyButton.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +182,184 @@ public class OnlineMusic extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveData();
+            }
+        });
+
+        // setting library
+        url1 = (TextView) findViewById(R.id.link1);
+        url2 = (TextView) findViewById(R.id.link2);
+        url3 = (TextView) findViewById(R.id.link3);
+        url4 = (TextView) findViewById(R.id.link4);
+        url5 = (TextView) findViewById(R.id.link5);
+        url6 = (TextView) findViewById(R.id.link6);
+        url7 = (TextView) findViewById(R.id.link7);
+        url8 = (TextView) findViewById(R.id.link8);
+        url9 = (TextView) findViewById(R.id.link9);
+        url10 = (TextView) findViewById(R.id.link10);
+        url11 = (TextView) findViewById(R.id.link11);
+        url12 = (TextView) findViewById(R.id.link12);
+        url13 = (TextView) findViewById(R.id.link13);
+        url14 = (TextView) findViewById(R.id.link14);
+        url15 = (TextView) findViewById(R.id.link15);
+        url16 = (TextView) findViewById(R.id.link16);
+        url17 = (TextView) findViewById(R.id.link17);
+        url18 = (TextView) findViewById(R.id.link18);
+        url19 = (TextView) findViewById(R.id.link19);
+        url20 = (TextView) findViewById(R.id.link20);
+        url21 = (TextView) findViewById(R.id.link21);
+        url22 = (TextView) findViewById(R.id.link22);
+        url23 = (TextView) findViewById(R.id.link23);
+        url24 = (TextView) findViewById(R.id.link24);
+        url25 = (TextView) findViewById(R.id.link25);
+
+        url1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url1.getText().toString());
+            }
+        });
+        url2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url2.getText().toString());
+            }
+        });
+        url3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url3.getText().toString());
+            }
+        });
+        url4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url4.getText().toString());
+            }
+        });
+        url5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url5.getText().toString());
+            }
+        });
+        url6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url6.getText().toString());
+            }
+        });
+        url7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url7.getText().toString());
+            }
+        });
+        url8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url8.getText().toString());
+            }
+        });
+        url9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url9.getText().toString());
+            }
+        });
+        url10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url10.getText().toString());
+            }
+        });
+        url11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url11.getText().toString());
+            }
+        });
+        url12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url12.getText().toString());
+            }
+        });
+        url13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url13.getText().toString());
+            }
+        });
+        url14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url14.getText().toString());
+            }
+        });
+        url15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url15.getText().toString());
+            }
+        });
+        url16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url16.getText().toString());
+            }
+        });
+        url17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url17.getText().toString());
+            }
+        });
+        url18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url18.getText().toString());
+            }
+        });
+        url19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url19.getText().toString());
+            }
+        });
+        url20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url20.getText().toString());
+            }
+        });
+        url21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url21.getText().toString());
+            }
+        });
+        url22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url22.getText().toString());
+            }
+        });
+        url23.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url23.getText().toString());
+            }
+        });
+        url24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url24.getText().toString());
+            }
+        });
+        url25.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtVw.setText(url25.getText().toString());
             }
         });
 
@@ -325,5 +510,7 @@ public class OnlineMusic extends AppCompatActivity {
         return time;
     }
 */
+
+
 
 }

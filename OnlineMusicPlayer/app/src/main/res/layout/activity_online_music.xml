@@ -7,19 +7,21 @@
     tools:context=".OnlineMusic"
     android:background="@drawable/listbgrd">
 
+    <!--Text - important-->
     <TextView
         android:id="@+id/txtVw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
-        android:textSize="20dp"/>
+        android:text="TextView"
+        android:textSize="20dp" />
 
+    <!--Type URL-->
     <EditText
         android:id="@+id/source"
         android:layout_width="wrap_content"
@@ -32,9 +34,369 @@
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Try: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" />
+        android:hint="Type your URL here"/>
 
+    <!--Library of URL-->
+    <ScrollView
 
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        android:clipToPadding="true"
+        android:contentDescription="@string/hide_bottom_view_on_scroll_behavior">
+
+        <LinearLayout
+            android:id="@+id/linkLib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/link1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link1"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:linksClickable="true"
+                android:longClickable="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link2"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link3"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link4"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link5"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link6"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link7"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link8"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link9"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link10"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link11"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link12"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link13"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link14"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link15"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link16"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link17"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link18"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link19"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link20"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link21"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link22"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link23"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link24"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/link25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/link25"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Apply Button-->
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="268dp"
+        android:text="Apply" />
+
+    <!--Switch 1-->
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="80dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="170dp"
+        android:gravity="center"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <!--Save Button-->
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="30dp"
+        android:text="Save" />
+<!--
+
+    <SeekBar
+        android:id="@+id/seekBarOnl"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/songStartOnl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="430dp"
+        android:layout_toLeftOf="@+id/seekBarOnl"
+        android:text="0:20"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/songStopOnl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="430dp"
+        android:layout_toRightOf="@+id/seekBarOnl"
+        android:text="5:15"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+-->
+
+    <!--Image center-->
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/playing" />
+
+    <!--STOP and PLAY - SWITCH-->
     <RelativeLayout
         android:layout_width="250dp"
         android:layout_height="70dp"
@@ -42,7 +404,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="580dp"
         android:layout_marginEnd="80dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -96,90 +458,4 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/applyBtn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="268dp"
-        android:text="Apply" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="80dp"
-        android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="170dp"
-        android:gravity="center"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-    <Button
-        android:id="@+id/saveBtn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="268dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="30dp"
-        android:text="Save" />
-<!--
-
-    <SeekBar
-        android:id="@+id/seekBarOnl"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="20dp" />
-
-    <TextView
-        android:id="@+id/songStartOnl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="430dp"
-        android:layout_toLeftOf="@+id/seekBarOnl"
-        android:text="0:20"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/songStopOnl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="430dp"
-        android:layout_toRightOf="@+id/seekBarOnl"
-        android:text="5:15"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
--->
-
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="270dp"
-        android:src="@drawable/playing"
-        android:layout_centerInParent="true"/>
-
 </RelativeLayout>
-
-<!-- first demo:    https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3  -->

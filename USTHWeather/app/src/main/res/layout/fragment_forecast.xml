@@ -11,7 +11,7 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ForecastFragment"
         android:orientation="vertical"
         android:background="@color/white"
@@ -56,7 +56,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Mon"
+                android:text="@string/monFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Partly Cloudy\n24C - 31C"
+                android:text="@string/partly_cloudy_n24c_31c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -93,7 +93,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Tue"
+                android:text="@string/tueFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Showers\n24C - 30C"
+                android:text="@string/showers_n24c_30c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -130,7 +130,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Wed"
+                android:text="@string/wedFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Rain\n22C - 23C"
+                android:text="@string/rain_n22c_23c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -167,7 +167,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Thu"
+                android:text="@string/thuFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -182,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Scattered Showers\n22C - 27C"
+                android:text="@string/scattered_showers_n22c_27c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -204,7 +204,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Fri"
+                android:text="@string/friFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -219,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Mostly Cloudy\n22C - 30C"
+                android:text="@string/mostly_cloudy_n22c_30c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -241,7 +241,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Sat"
+                android:text="@string/satFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -256,7 +256,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Partly Cloudy\n24C - 31C"
+                android:text="@string/partly_cloudy_n24c_31c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -278,7 +278,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Sun"
+                android:text="@string/sunFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -293,7 +293,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Thunderstorms\n25C - 28C"
+                android:text="@string/thunderstorms_n25c_28c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -315,7 +315,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Mon"
+                android:text="@string/monFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -330,7 +330,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Scattered Thunderstorms\n24C - 27C"
+                android:text="@string/scattered_thunderstorms_n24c_27c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -352,7 +352,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Tue"
+                android:text="@string/tueFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -367,7 +367,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Showers\n24C - 26C"
+                android:text="@string/showers_n24c_26c"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -391,7 +391,7 @@
                 android:paddingEnd="15dp"
                 android:paddingVertical="15dp"
 
-                android:text="Wed"
+                android:text="@string/wedFr"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
@@ -406,11 +406,25 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingStart="25dp"
-                android:text="Scattered Thunderstorms\n23C - 27CC"
+                android:text="@string/scattered_thunderstorms_n23c_27cc"
                 android:textSize="15.5dp"
                 android:textStyle="bold"
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="60dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I'm so lazy to change all app to Vn-ese :))))"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>

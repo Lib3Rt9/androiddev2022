@@ -9,6 +9,14 @@
     tools:context=".WeatherActivity"
     android:orientation="vertical">
 
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pager"/>
+
+
+<!--
+
     <fragment
         android:id="@+id/frTag"
         android:layout_width="match_parent"
@@ -25,6 +33,7 @@
         android:layout_alignParentBottom="true"
         android:layout_weight="1"
         />
+-->
 
 </LinearLayout>
 

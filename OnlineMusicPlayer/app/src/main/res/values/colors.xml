@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bgrlistmuzix">#FF3B3938</color>
     <color name="silver">#C0C0C0</color>
+    <color name="transWhite">#00FFFFFF</color>
+    <color name="pink">#DFF479C2</color>
 </resources>

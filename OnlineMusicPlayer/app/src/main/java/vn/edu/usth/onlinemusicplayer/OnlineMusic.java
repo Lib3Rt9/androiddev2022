@@ -30,6 +30,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.github.angads25.toggle.interfaces.OnToggledListener;
+import com.github.angads25.toggle.model.ToggleableView;
+import com.github.angads25.toggle.widget.LabeledSwitch;
+
 import java.io.IOException;
 
 public class OnlineMusic extends AppCompatActivity {
@@ -49,6 +53,7 @@ public class OnlineMusic extends AppCompatActivity {
     // creating a variable for
     // button and media player
     Button playBtn, pauseBtn; // this buttons is not in use anymore
+    Button btnPLAY;
     MediaPlayer mediaPlayer; // player
     SeekBar seekMusicBarOnl; // seek bar, not really work
 
@@ -59,6 +64,7 @@ public class OnlineMusic extends AppCompatActivity {
     TextView url1, url2, url3, url4, url5, url6, url7, url8, url9, url10, url11, url12, url13, url14,
             url15, url16, url17, url18, url19, url20, url21, url22, url23, url24, url25;
 
+    LabeledSwitch switch2;
 
     // Back to home :v
     @Override
@@ -85,9 +91,10 @@ public class OnlineMusic extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.source);
         applyButton = (Button) findViewById(R.id.applyBtn);
         saveButton = (Button) findViewById(R.id.saveBtn);
-        switch1 = (Switch) findViewById(R.id.switch1);
-        switch3 = (Switch) findViewById(R.id.switch3);
+        // switch1 = (Switch) findViewById(R.id.switch1);
+        // switch3 = (Switch) findViewById(R.id.switch3);
 
+        // btnPLAY = (Button) findViewById(R.id.btnPLAY);
 
         // seekMusicBarOnl = findViewById(R.id.seekBarOnl);
 
@@ -366,17 +373,42 @@ public class OnlineMusic extends AppCompatActivity {
         loadData();
         updateViews();
 
+/*
+
+        btnPLAY.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                    mediaPlayer.reset();
+                    mediaPlayer.release();
+
+                    btnPLAY.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
+
+                }
+                else {
+                    playAudio();
+                    btnPLAY.setBackgroundResource(R.drawable.ic_baseline_pause_24);
+                }
+            }
+        });
+
+*/
+
 
         // this switch is used to play and stop song
-        switch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        LabeledSwitch switch2 = findViewById(R.id.switch2);
 
-                if (isChecked == true) { // checked = play
+        switch2.setOnToggledListener(new OnToggledListener() {
+            @Override
+            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+                if (isOn == true) { // checked = play
                     playAudio();
+                    //switch3.setBackgroundResource(R.drawable.ic_baseline_pause_24);
                 }
 
                 else { // not checked = stop
+                    //switch3.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
                     mediaPlayer.stop();
                     mediaPlayer.reset();
                     mediaPlayer.release();
@@ -439,7 +471,7 @@ public class OnlineMusic extends AppCompatActivity {
         editor.putString(TEXT, txtVw.getText().toString());
 
         // switch -> not checked = false; checked = true
-        editor.putBoolean(SWITCH1, switch1.isChecked());
+        // editor.putBoolean(SWITCH1, switch1.isChecked());
 
         // apply to check
         // only checked is able to save data for displaying next time
@@ -455,13 +487,13 @@ public class OnlineMusic extends AppCompatActivity {
         // no input -> empty string
         text = sharedPreferences.getString(TEXT, "");
         // switch = off by default
-        switchOnOff = sharedPreferences.getBoolean(SWITCH1, false);
+        // switchOnOff = sharedPreferences.getBoolean(SWITCH1, false);
     }
 
     // update view
     public void updateViews() {
         txtVw.setText(text); // load the text
-        switch1.setChecked(switchOnOff); // switchOnOff true -> check
+        // switch1.setChecked(switchOnOff); // switchOnOff true -> check
     }
 
 

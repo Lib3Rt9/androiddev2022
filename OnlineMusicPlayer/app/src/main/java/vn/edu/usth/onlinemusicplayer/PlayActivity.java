@@ -62,6 +62,7 @@ public class PlayActivity extends AppCompatActivity {
 */
 
     Thread updateSeekBar; // variable to make seek bar update along with the song
+    Thread songStartt;
 
 
     @Override

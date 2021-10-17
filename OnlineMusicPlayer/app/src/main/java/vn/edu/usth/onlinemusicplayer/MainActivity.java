@@ -3,9 +3,11 @@ package vn.edu.usth.onlinemusicplayer;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     // Initialize
     ListView listView;
     String[] items; // names of songs = items
+    MediaPlayer mediaPlayer;
 
     /* private ActivityMainBinding binding; */
 
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(getApplicationContext(), OnlineMusic.class));
             }
         });
@@ -118,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
             }
             // If the "files" is "mp3" or "wav"
             else {
-                if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")) {
+                if (singleFile.getName().endsWith(".mp3") || singleFile.getName().endsWith(".wav")
+                || singleFile.getName().endsWith(".wma")) {
                     arrayList.add(singleFile);
                 }
             }
@@ -136,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
 
         // make songs look prettier
         for (int i = 0; i < songsInLib.size(); i++) {
-            items[i] = songsInLib.get(i).getName().replace(".mp3", "").replace(".wav", "");
+            items[i] = songsInLib.get(i).getName().replace(".mp3", "").replace(".wav", "")
+            .replace(".wma", "");
         }
 
         personalizeAdapter personalizeAdapter = new personalizeAdapter();

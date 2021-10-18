@@ -1,5 +1,6 @@
 package vn.edu.usth.weather;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,11 +10,17 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +30,7 @@ import java.io.InputStream;
 
 public class WeatherActivity extends AppCompatActivity {
     static MediaPlayer mediaPlayer;
+    static Settings settings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,11 +38,12 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
 
         Context context;
-        InputStream is = new getResources()
-                .openRawResource(R.raw.music);
+        //InputStream is = new getResources()
+        //        .openRawResource(R.raw.music);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.music);
         mediaPlayer.start();
+
 /*
 
         ForecastFragment FcFr = ForecastFragment.newInstance("", "");
@@ -98,6 +107,36 @@ public class WeatherActivity extends AppCompatActivity {
         Log.i("Weather", "onResume() called");
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == R.id.reFresh) {
+            Log.i("Weather", "Menu search clicked");
+            Toast.makeText(this, "Refreshhhhhhh!!!!", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else if (item.getItemId() == R.id.reFresh) {
+            Intent intent = new Intent(String.valueOf(item));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    settings.setOnClickListener(new View.OnClickListener)
+    {
+        @Override
+        public void onClick (View v){
+        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+    }
+    }
+
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
         private final int PAGE_COUNT = 3;
         private String titles[] = new String[] { "Hanoi", "Paris", "Toulouse" };
@@ -128,8 +167,8 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-    private class getResources {
+ /*   private class getResources {
         public InputStream openRawResource(int music) {
         }
-    }
+    };*/
 }

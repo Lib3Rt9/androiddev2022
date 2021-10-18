@@ -26,8 +26,8 @@
     <string name="scattered_thunderstorms_n24c_27c">Scattered Thunderstorms\n24C - 27C</string>
     <string name="showers_n24c_26c">Showers\n24C - 26C</string>
     <string name="scattered_thunderstorms_n23c_27cc">Scattered Thunderstorms\n23C - 27CC</string>
-    <string name="refresh">refresh</string>
-    <string name="setting">setting</string>
+    <string name="refresh">REFRESHHHHHHH!!!!!!!</string>
+    <string name="setting">SETTING</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -44,5 +44,6 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_pref">PrefActivity</string>
 
 </resources>

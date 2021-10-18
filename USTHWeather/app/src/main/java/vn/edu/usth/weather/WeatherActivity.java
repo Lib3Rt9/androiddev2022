@@ -30,7 +30,6 @@ import java.io.InputStream;
 
 public class WeatherActivity extends AppCompatActivity {
     static MediaPlayer mediaPlayer;
-    static Settings settings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -122,20 +121,14 @@ public class WeatherActivity extends AppCompatActivity {
             Toast.makeText(this, "Refreshhhhhhh!!!!", Toast.LENGTH_SHORT).show();
             return true;
         }
-        else if (item.getItemId() == R.id.reFresh) {
-            Intent intent = new Intent(String.valueOf(item));
+        else if (item.getItemId() == R.id.setting) {
+            Intent intent = new Intent(getApplicationContext(), PrefActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    settings.setOnClickListener(new View.OnClickListener)
-    {
-        @Override
-        public void onClick (View v){
-        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-    }
-    }
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
         private final int PAGE_COUNT = 3;

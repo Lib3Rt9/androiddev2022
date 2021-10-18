@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -15,6 +16,9 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -24,6 +28,10 @@ public class WeatherActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        Context context;
+        InputStream is = new getResources()
+                .openRawResource(R.raw.music);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.music);
         mediaPlayer.start();
@@ -119,5 +127,9 @@ public class WeatherActivity extends AppCompatActivity {
             return titles[page];
         }
     }
-    
+
+    private class getResources {
+        public InputStream openRawResource(int music) {
+        }
+    }
 }

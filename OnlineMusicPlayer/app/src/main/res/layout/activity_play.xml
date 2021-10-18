@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PlayActivity"
     android:orientation="vertical"
-    android:background="@drawable/b1"
+    android:background="@drawable/b2"
     android:weightSum="10">
 
     <LinearLayout

@@ -46,4 +46,6 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_pref">PrefActivity</string>
 
+
+    <string name="server_response">some sample json here</string>
 </resources>

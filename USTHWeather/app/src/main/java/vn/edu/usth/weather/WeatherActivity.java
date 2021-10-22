@@ -9,10 +9,14 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -23,9 +27,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -35,6 +45,8 @@ public class WeatherActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        runtimePermission();
 
         Context context;
         //InputStream is = new getResources()
@@ -73,6 +85,8 @@ public class WeatherActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
 
         Log.i("Weather", "onCreate()");
+
+
 
     }
     
@@ -164,4 +178,24 @@ public class WeatherActivity extends AppCompatActivity {
         public InputStream openRawResource(int music) {
         }
     };*/
-}
+
+
+    // Permission ----------------------------------------------------------------------------------
+    // Use Dexter library to ask permission
+    public void runtimePermission() {
+        Dexter.withContext(this).withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
+                .withListener(new MultiplePermissionsListener() {
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+                        new WeatherAndForecastFragment();
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
+                        permissionToken.continuePermissionRequest();
+                    }
+                }).check();
+
+
+
+}}

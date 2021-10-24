@@ -18,7 +18,7 @@ public class WorkerThread extends WeatherActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_thread);
 
-
+/*
         final Handler handler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -48,5 +48,7 @@ public class WorkerThread extends WeatherActivity {
             }
         });
         t.start();
+
+    */
     }
 }

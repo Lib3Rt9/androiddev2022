@@ -219,7 +219,7 @@ public class WeatherActivity extends AppCompatActivity {
                 }
 // Assume that we got our data from server
                 Bundle bundle = new Bundle();
-                Bundle.putString("server_response", "some sample json here");
+                //Bundle.putString("server_response", "some sample json here");
 // notify main thread
                 Message msg = new Message();
                 msg.setData(bundle);

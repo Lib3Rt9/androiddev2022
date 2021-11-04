@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">OnlineMusicPlayer</string>
+    <string name="title_activity_online">OnlineActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+    <string name="link1">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3</string>
+    <string name="link2">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3</string>
+    <string name="link3">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3</string>
+    <string name="link4">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3</string>
+    <string name="link5">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3</string>
+    <string name="link6">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3</string>
+    <string name="link7">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3</string>
+    <string name="link8">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
+    <string name="link9">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3</string>
+    <string name="link10">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3</string>
+    <string name="link11">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3</string>
+    <string name="link12">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3</string>
+    <string name="link13">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3</string>
+    <string name="link14">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3</string>
+    <string name="link15">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3</string>
+    <string name="link16">https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3</string>
+    <string name="link17">http://www.hochmuth.com/mp3/Boccherini_Concerto_478-1.mp3</string>
+    <string name="link18">http://www.hochmuth.com/mp3/Tchaikovsky_Rococo_Var_orch.mp3</string>
+    <string name="link19">http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3</string>
+    <string name="link20">http://www.hochmuth.com/mp3/Vivaldi_Sonata_eminor_.mp3</string>
+    <string name="link21">http://www.hochmuth.com/mp3/Tchaikovsky_Nocturne__orch.mp3</string>
+    <string name="link22">http://www.hochmuth.com/mp3/Haydn_Adagio.mp3</string>
+    <string name="link23">http://www.hochmuth.com/mp3/Bloch_Prayer.mp3</string>
+    <string name="link24">http://www.hochmuth.com/mp3/Beethoven_12_Variation.mp3</string>
+    <string name="link25">https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-FLAC-File.flac</string>
+
+
+    <string-array name="links">
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3</item>
+        <item>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Boccherini_Concerto_478–1.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Tchaikovsky_Rococo_Var_orch.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Vivaldi_Sonata_eminor_.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Tchaikovsky_Nocturne__orch.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Haydn_Adagio.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Bloch_Prayer.mp3</item>
+        <item>http://www.hochmuth.com/mp3/Beethoven_12_Variation.mp3</item>
+        <item>https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-FLAC-File.flac</item>
+    </string-array>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -13,18 +13,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gauravk.audiovisualizer.visualizer.BarVisualizer;
+import com.google.firebase.database.core.utilities.Utilities;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -38,7 +41,7 @@ public class PlayActivity extends AppCompatActivity {
 
     ImageView imageView;
 
-    Button btnShuf, btnList, btnRep;
+    ImageButton btnShuf, btnList, btnRep;
     Button buttonPlay, buttonNext, buttonPrev, buttonForward, buttonRewind;
 
     TextView textSongName, songStart, songStop;
@@ -46,15 +49,12 @@ public class PlayActivity extends AppCompatActivity {
 
     Boolean shuffleFlag = false;
     Boolean repeatFlag = false;
+    Utilities utils;
 
-    public static final String EXTRA_NAME = "song_name";
     int i; // position to index song
     ArrayList<File> songInLib; // a list of files
 
-    BarVisualizer barVisualizer; // this cause error
-    String songName;
-    Thread updateSeekBar; // variable to make seek bar update along with the song
-    // updateSeekbar is no more used
+// << 1 >>
 
     // use for action bar -------------------------------------------------
     @Override
@@ -65,16 +65,7 @@ public class PlayActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-/* no bar visualizer yet due to error
-
-    @Override
-    protected void onDestroy() {
-        if (barVisualizer != null) {
-            barVisualizer.release();
-        }
-        super.onDestroy();
-    }
-*/
+// << 2 >>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,15 +89,15 @@ public class PlayActivity extends AppCompatActivity {
         textSongName = findViewById(R.id.textSong); // song name
         songStart = findViewById(R.id.songStart); // start time position (often start from 00:00)
         songStop = findViewById(R.id.songStop); // stop time position
-
         seekMusicBar = findViewById(R.id.seekBar); // seek bar
-        /*barVisualizer = findViewById(R.id.circleline);*/
 
         imageView = findViewById(R.id.imgView); // the image
 
-        btnShuf = findViewById(R.id.btnShuf);
-        btnRep = findViewById(R.id.btnRep);
-        btnList = findViewById(R.id.btnList);
+        btnShuf = findViewById(R.id.btnShuf); // Shuffle
+        btnRep = findViewById(R.id.btnRep); // Repeat
+        btnList = findViewById(R.id.btnList); // Song List
+
+//        << 3 >>
 
         // stop song if the song exist ------------------------------------
         if (mediaPlayer != null) {
@@ -124,54 +115,16 @@ public class PlayActivity extends AppCompatActivity {
 
         // TIME TO PLAY MUSIC -----------------------------------------------
         player(i);
-        // set media player
-        // mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
-        // mediaPlayer.start();
+//        Toast.makeText(getApplicationContext(), "PLAYING...", Toast.LENGTH_SHORT).show();
 
+//        << 4 >>
 
-        // set limit for seek bar
-        // seekMusicBar.setMax(mediaPlayer.getDuration());
-        // updateSeekBar.start();
-
-        // update seek bar, personalize also
-        // seekMusicBar.getProgressDrawable().setColorFilter(getResources().getColor(R.color.black),
-        //         PorterDuff.Mode.MULTIPLY);
-        // seekMusicBar.getThumb().setColorFilter(getResources().getColor(R.color.black),
-        //         PorterDuff.Mode.SRC_IN);
-
-
-
-//        // get the end time
-//        String endTime = createTime(mediaPlayer.getDuration());
-//        // set the text of end time
-//        // songStop = the length of the song
-//        songStop.setText(endTime);
-
-        // update the end time when click next or previous
-        // final Handler handler = new Handler();
-        // final int delay = 1000;
-        // handler.postDelayed(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         String currentTime = createTime(mediaPlayer.getCurrentPosition());
-        //         songStart.setText(currentTime);
-        //         // get the end time
-        //         String endTime = createTime(mediaPlayer.getDuration());
-        //         // set the text of end time
-        //         // songStop = the length of the song
-        //         songStop.setText(endTime);
-        //         handler.postDelayed(this, delay);
-        //     }
-        // }, delay);
-
-        // set activity for buttons
-
+        // SET ACTIVITY FOR BUTTONS
         // set activity for button PLAY -------------------------------------
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 play();
-                Toast.makeText(getApplicationContext(), "PLAYING...", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -179,44 +132,8 @@ public class PlayActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // stop song first
-                // mediaPlayer.stop();
-                // mediaPlayer.release();
-
-                // // extract position
-                // i = ((i+1)%songInLib.size());
-
-                // // create object of Uri
-                // // convert to string
-                // Uri uri = Uri.parse(songInLib.get(i).toString());
-
-                // // media player
-                // mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
-
-                // // extract song name
-                // songName = songInLib.get(i).getName();
-                // textSongName.setText(songName);
-
-                // mediaPlayer.start(); // and play
-
-                // the code above is not optimized
-
-//                if (shuffleFlag && !repeatFlag) {
-//                    i = getRandom(songInLib.size() - 1);
-//                }
-//                else if (!shuffleFlag && ! repeatFlag) {
-//                    i = ((i + 1) % songInLib.size());
-//                }
-
-                if (i < songInLib.size() - 1) {
-                    i++;
-                }
-                else {
-                    i = 0;
-                }
-                // choose the position of the song
-                player(i);
-
+//                << 5 >>
+                next();
             }
         });
 
@@ -224,37 +141,8 @@ public class PlayActivity extends AppCompatActivity {
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // // stop song first
-                // mediaPlayer.stop();
-                // mediaPlayer.release();
-
-                // // extract position
-                // i = ((i-1)<0)?(songInLib.size()-1):i-1;
-
-                // // create object of Uri
-                // // convert to string
-                // Uri uri = Uri.parse(songInLib.get(i).toString());
-
-                // // media player
-                // mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
-
-                // // extract song name
-                // songName = songInLib.get(i).getName();
-                // textSongName.setText(songName);
-
-                // mediaPlayer.start(); // and play
-
-            // the code above is not optimized
-
-                if (i <= 0) {
-                    i = songInLib.size() - 1;
-
-                }
-                else {
-                    i--;
-                }
-
-                player(i);
+//               << 6 >>
+                previous();
             }
         });
 
@@ -262,10 +150,7 @@ public class PlayActivity extends AppCompatActivity {
         buttonForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mediaPlayer.isPlaying()) {
-                    // if playing, skip forward 10 sec = 10000 milisec
-                    mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() + 10000);
-                }
+                forward();
             }
         });
 
@@ -273,8 +158,7 @@ public class PlayActivity extends AppCompatActivity {
         buttonRewind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // if playing, skip backward 10 sec = 10000 milisec
-                mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() - 10000);
+                rewind();
             }
         });
 
@@ -282,14 +166,7 @@ public class PlayActivity extends AppCompatActivity {
         btnShuf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (shuffleFlag) {
-                    shuffleFlag = false;
-                    btnShuf.setBackgroundResource(R.drawable.ic_baseline_shuffle_24);
-                }
-                else {
-                    shuffleFlag = true;
-                    btnShuf.setBackgroundResource(R.drawable.ic_baseline_shuffle_blue);
-                }
+                shuffle();
             }
         });
 
@@ -297,25 +174,58 @@ public class PlayActivity extends AppCompatActivity {
         btnRep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (repeatFlag) {
-                    repeatFlag = false;
-                    btnRep.setBackgroundResource(R.drawable.ic_baseline_repeat_24);
-                }
-                else {
-                    repeatFlag = true;
-                    btnRep.setBackgroundResource(R.drawable.ic_baseline_repeat_blue);
-                }
+                repeat();
             }
         });
 
+        // set activity for button LIST -------------------------------------
+        btnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        Log.i("PlayActivity", "onCreate");
     }
 
-    private int getRandom(int i) {
-        Random random = new Random();
-
-        return random.nextInt(i + 1);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("PlayActivity", "onStart");
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("PlayActivity", "onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("PlayActivity", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("PlayActivity", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("PlayActivity", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("PlayActivity", "onDestroy");
+    }
+
+    //    << 7 >>
 
     // timing the song ----------------------------------------------------
     public String createTime(int duration) {
@@ -370,14 +280,25 @@ public class PlayActivity extends AppCompatActivity {
 
                 int curSong = i; // i = position of the song
 
-                // and keep changing the song when finish
-                if (curSong < songInLib.size() - 1) {
-                    curSong++;
+                // and keep CHANGING the song when FINISH
+                // check to shuffle song
+                if (shuffleFlag) {
+                    Random random = new Random();
+                    curSong = random.nextInt((songInLib.size() - 1) + 1);
+                    player(curSong);
                 }
+                // check to repeat song
+                else if (repeatFlag) {
+                    player(curSong);
+                }
+                // no shuffle or repeat = play next song as index
                 else {
-                    curSong = 0;
+                    if (curSong < songInLib.size() - 1) {
+                        curSong++;
+                    } else {
+                        curSong = 0;
+                    }
                 }
-
                 player(curSong); // let's play
             }
         });
@@ -398,7 +319,6 @@ public class PlayActivity extends AppCompatActivity {
                     mediaPlayer.seekTo(i);
                     seekMusicBar.setProgress(i);
                 }
-
             }
 
             @Override
@@ -436,7 +356,7 @@ public class PlayActivity extends AppCompatActivity {
 
     // set CURRENT TIME -------------------------------------------------
     @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
+    private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
 //            Log.i("handler ", "handler called");
@@ -449,65 +369,123 @@ public class PlayActivity extends AppCompatActivity {
         }
     };
 
-    // button PLAY ------------------------------------------------------
+//    << 8 >>
+
+    // function PLAY -------------------------------------------------------
     private void play() {
         if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
             mediaPlayer.start();
             buttonPlay.setBackgroundResource(R.drawable.ic_baseline_pause_24);
         } else {
-            pause();
+            _pause();
         }
 
     }
 
-    // button PAUSE -----------------------------------------------------
-    private void pause() {
+    // function PAUSE ------------------------------------------------------
+    private void _pause() {
         if (mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
             buttonPlay.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
-            Toast.makeText(getApplicationContext(), "PAUSED", Toast.LENGTH_SHORT).show();
         }
     }
 
-    // button SHUFFLE ---------------------------------------------------
-    public void shuffleSong(View v) {
+    // function NEXT -------------------------------------------------------
+    private void next() {
+
+        // check to shuffle song
         if (shuffleFlag) {
-            btnShuf.setBackgroundResource(R.drawable.ic_baseline_shuffle_blue);
-            Toast.makeText(getApplicationContext(), "Shuffle OFF", Toast.LENGTH_SHORT).show();
+            Random random = new Random();
+            i = random.nextInt((songInLib.size() - 1) + 1);
+            player(i);
+        }
+        // check to repeat song
+        else if (repeatFlag) {
+            player(i);
         }
         else {
-            btnShuf.setBackgroundResource(R.drawable.ic_baseline_shuffle_24);
-            Toast.makeText(getApplicationContext(), "Shuffle ON", Toast.LENGTH_SHORT).show();
-        }
-        shuffleFlag = !shuffleFlag;
-    }
-
-    // button REPEAT ----------------------------------------------------
-    public void repeatSong(View v) {
-        if (repeatFlag) {
-            btnRep.setBackgroundResource(R.drawable.ic_baseline_repeat_24);
-            Toast.makeText(getApplicationContext(), "Repeat OFF", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            btnRep.setBackgroundResource(R.drawable.ic_baseline_repeat_blue);
-            Toast.makeText(getApplicationContext(), "Repeat ON", Toast.LENGTH_SHORT).show();
-        }
-        repeatFlag = !repeatFlag;
-    }
-
-    // DO SOMETHING
-    private void doSomething() {
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                if (!repeatFlag) {
-                    player(i);
-                }
-                else {
-                    player(i);
-                }
+            if (i < songInLib.size() - 1) {
+                i++;
+            } else {
+                i = 0;
             }
-        });
+            // choose the position of the song
+            player(i);
+        }
     }
 
+    // function PREVIOUS ---------------------------------------------------
+    private void previous() {
+
+        // check to shuffle song
+        if (shuffleFlag) {
+            Random random = new Random();
+            i = random.nextInt((songInLib.size() - 1) + 1);
+            player(i);
+        }
+        // check to repeat song
+        else if (repeatFlag) {
+            player(i);
+        }
+        else {
+            if (i <= 0) {
+                i = songInLib.size() - 1;
+            } else {
+                i--;
+            }
+            player(i);
+        }
+    }
+
+    // function FORWARD ----------------------------------------------------
+    private void forward() {
+        if (mediaPlayer.isPlaying()) {
+            // if playing, skip forward 10 sec = 10000 milisec
+            mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() + 10000);
+        }
+    }
+
+    // function REWIND -----------------------------------------------------
+    private void rewind() {
+        // if playing, skip backward 10 sec = 10000 milisec
+        mediaPlayer.seekTo(mediaPlayer.getCurrentPosition() - 10000);
+    }
+
+    // function SHUFFLE ----------------------------------------------------
+    private void shuffle() {
+        if (shuffleFlag) {
+            shuffleFlag = false;
+//            Toast.makeText(getApplicationContext(), "Shuffle OFF", Toast.LENGTH_SHORT).show();
+            btnShuf.setImageResource(R.drawable.ic_baseline_shuffle_24);
+        }
+        else {
+            // repeat to true
+            shuffleFlag = true;
+//            Toast.makeText(getApplicationContext(), "Shuffle ON", Toast.LENGTH_SHORT).show();
+
+            // shuffle to false
+            repeatFlag = false;
+            btnShuf.setImageResource(R.drawable.ic_baseline_shuffle_blue);
+            btnRep.setImageResource(R.drawable.ic_baseline_repeat_24);
+        }
+    }
+
+    // function REPEAT -----------------------------------------------------
+    private void repeat() {
+        if (repeatFlag) {
+            repeatFlag = false;
+//            Toast.makeText(getApplicationContext(), "Repeat OFF", Toast.LENGTH_SHORT).show();
+            btnRep.setImageResource(R.drawable.ic_baseline_repeat_24);
+        }
+        else {
+            // repeat to true
+            repeatFlag = true;
+//            Toast.makeText(getApplicationContext(), "Repeat is ON", Toast.LENGTH_SHORT).show();
+
+            // shuffle to false
+            shuffleFlag = false;
+            btnRep.setImageResource(R.drawable.ic_baseline_repeat_blue);
+            btnShuf.setImageResource(R.drawable.ic_baseline_shuffle_24);
+        }
+    }
 }

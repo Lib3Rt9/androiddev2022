@@ -62,7 +62,7 @@
         <item>http://www.hochmuth.com/mp3/Beethoven_12_Variation.mp3</item>
         <item>https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-FLAC-File.flac</item>
     </string-array>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

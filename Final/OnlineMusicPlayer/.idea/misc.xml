@@ -7,19 +7,25 @@
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.2911458333333333" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.18981481481481483" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_queue_music_24.xml" value="0.2101851851851852" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_queue_music_dark.xml" value="0.1" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_repeat_24.xml" value="0.1" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_repeat_blue.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2101851851851852" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_shuffle_24.xml" value="0.1" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_shuffle_blue.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/list_bgr.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_abcdefghjtitrdpjhd.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.12758620689655173" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_online_music.xml" value="0.152" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_online_play.xml" value="0.1" />
-        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_play.xml" value="0.12982456140350876" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_play.xml" value="0.22720247295208656" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_play2.xml" value="0.275" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_song_list.xml" value="0.1" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_swipe_left.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_test.xml" value="0.14375" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_url.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/content_abcdefghjtitrdpjhd.xml" value="0.2572463768115942" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/fragment_blank.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/fragment_first.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/fragment_song_list.xml" value="0.1337386018237082" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/lib_url.xml" value="0.19067028985507245" />

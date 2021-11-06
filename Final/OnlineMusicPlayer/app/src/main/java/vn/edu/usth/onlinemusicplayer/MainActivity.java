@@ -1,5 +1,11 @@
 package vn.edu.usth.onlinemusicplayer;
 
+import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonNext;
+import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonPrev;
+import static vn.edu.usth.onlinemusicplayer.PlayActivity.mediaPlayer;
+
+import static vn.edu.usth.onlinemusicplayer.PlayActivity.sName;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -7,6 +13,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Log;
@@ -15,11 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.MediaController;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -41,13 +51,19 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
+
 public class MainActivity extends AppCompatActivity{
     // Initialize
     ListView listView;
     String[] items; // names of songs = items
-    MediaPlayer mediaPlayer;
 
-    float x1, x2, y1, y2;
+    @SuppressLint("StaticFieldLeak")
+    static TextView titleSong;
+    Button changeToPlayer;
+    @SuppressLint("StaticFieldLeak")
+    static Button playMain, nextMain, prevMain;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +73,57 @@ public class MainActivity extends AppCompatActivity{
         // register List View here
         listView = (ListView) findViewById(R.id.listView);
 
+        titleSong = findViewById(R.id.titleSong);
+        changeToPlayer = findViewById(R.id.changeToPlayer);
+        playMain = findViewById(R.id.playMain);
+        nextMain = findViewById(R.id.nextMain);
+        prevMain = findViewById(R.id.prevMain);
+
         runtimePermission();
+
+        titleSong.setText(sName);
+//        playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
+
+        changeToPlayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                onBackPressed();
+//                startActivity(new Intent(getApplicationContext(), PlayActivity.class));
+            }
+        });
+
+        playMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mediaPlayer.isPlaying()) {
+                    playMain.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
+                    mediaPlayer.pause();
+                }
+                else if (!mediaPlayer.isPlaying()){
+                    playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
+                    mediaPlayer.start();
+                }
+//                onRestart();
+            }
+        });
+
+        nextMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonNext.performClick();
+                onRestart();
+            }
+        });
+
+        prevMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonPrev.performClick();
+                onRestart();
+            }
+        });
+
+
 
         FloatingActionButton mFab = (FloatingActionButton) findViewById(R.id.floatingSearchButtonn);
         mFab.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +144,9 @@ public class MainActivity extends AppCompatActivity{
     protected void onRestart() {
         super.onRestart();
         Log.i("MainActivity", "onRestart");
+        Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
+        startActivity(i);
+        finish();
     }
 
     @Override

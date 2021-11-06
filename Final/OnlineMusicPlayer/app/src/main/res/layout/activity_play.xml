@@ -159,12 +159,11 @@
                 android:id="@+id/buttonPrev"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
-                android:gravity="center"
                 android:layout_toStartOf="@id/buttonPlay"
-                android:background="@drawable/ic_baseline_skip_previous_24" />
+                android:background="@drawable/ic_baseline_skip_previous_24"
+                android:gravity="center" />
 
             <Button
                 android:id="@+id/buttonForward"

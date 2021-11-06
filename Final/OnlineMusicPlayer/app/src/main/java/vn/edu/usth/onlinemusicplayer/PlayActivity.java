@@ -2,6 +2,8 @@ package vn.edu.usth.onlinemusicplayer;
 
 import static java.lang.Thread.sleep;
 
+import static vn.edu.usth.onlinemusicplayer.MainActivity.playMain;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,17 +44,20 @@ public class PlayActivity extends AppCompatActivity {
     ImageView imageView;
 
     ImageButton btnShuf, btnList, btnRep;
-    Button buttonPlay, buttonNext, buttonPrev, buttonForward, buttonRewind;
+    static Button buttonPlay, buttonNext, buttonPrev, buttonForward, buttonRewind;
 
-    TextView textSongName, songStart, songStop;
-    SeekBar seekMusicBar;
+    static TextView textSongName;
+    static TextView songStart, songStop;
+    static SeekBar seekMusicBar;
 
     Boolean shuffleFlag = false;
     Boolean repeatFlag = false;
     Utilities utils;
 
-    int i; // position to index song
-    ArrayList<File> songInLib; // a list of files
+    static int i; // position to index song
+    static ArrayList<File> songInLib; // a list of files
+    static String sName, cTime, endTime;
+
 
 // << 1 >>
 
@@ -61,6 +66,7 @@ public class PlayActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed(); // back to MAIN ACTIVITY
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -71,6 +77,8 @@ public class PlayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+//        new MyService();
 
         // setting title and action bar ------------------------------------
         // getSupportActionBar().setTitle("PPPPPPPPPPPPP");
@@ -182,6 +190,8 @@ public class PlayActivity extends AppCompatActivity {
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
+//                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 onBackPressed();
             }
         });
@@ -251,7 +261,7 @@ public class PlayActivity extends AppCompatActivity {
         }
 
         // get the song name -----------------------------------------------
-        String sName = songInLib.get(i).getName().replace(".mp3", "").replace(".m4a", "").replace(".wav", "").replace(".m4b", "");
+        sName = songInLib.get(i).getName().replace(".mp3", "").replace(".m4a", "").replace(".wav", "").replace(".m4b", "");
         textSongName.setText(sName);
         Uri uri = Uri.parse(songInLib.get(i).toString());
 
@@ -260,7 +270,7 @@ public class PlayActivity extends AppCompatActivity {
         mediaPlayer.setOnPreparedListener(mp -> {
 
             // first is TOTAL TIME of the song
-            String endTime = createTime(mediaPlayer.getDuration());
+            endTime = createTime(mediaPlayer.getDuration());
             songStop.setText(endTime);
 
             // then the SEEKBAR
@@ -300,6 +310,24 @@ public class PlayActivity extends AppCompatActivity {
                     }
                 }
                 player(curSong); // let's play
+
+//                Intent i = new Intent(PlayActivity.this, MainActivity.class);  //your class
+//                startActivity(i);
+//                finish();
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
             }
         });
 
@@ -364,7 +392,7 @@ public class PlayActivity extends AppCompatActivity {
             // update seek bar
             seekMusicBar.setProgress(current_position);
             //and the time, set up the current time of the playing time
-            String cTime = createTime(current_position);
+            cTime = createTime(current_position);
             songStart.setText(cTime);
         }
     };

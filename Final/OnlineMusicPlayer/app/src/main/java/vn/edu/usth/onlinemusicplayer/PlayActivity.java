@@ -2,8 +2,6 @@ package vn.edu.usth.onlinemusicplayer;
 
 import static java.lang.Thread.sleep;
 
-import static vn.edu.usth.onlinemusicplayer.MainActivity.playMain;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +22,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -354,6 +353,7 @@ public class PlayActivity extends AppCompatActivity {
 //                }
 //                player(curSong); // let's play
 
+//                if (PlayActivity.isDes)
 //                Intent i = new Intent(PlayActivity.this, MainActivity.class);  //your class
 //                startActivity(i);
 //                finish();

@@ -34,7 +34,7 @@ public class Online extends AppCompatActivity {
 
     // our audio url from firebase.
 
-    String audioUrl;
+    static String audioUrl;
 
 
 

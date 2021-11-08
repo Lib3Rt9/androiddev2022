@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineMusicPlayer">
         <activity
+            android:name=".OnlinePlayer"
+            android:exported="false" />
+        <activity
             android:name=".test"
             android:exported="false" />
         <activity

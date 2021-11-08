@@ -37,7 +37,7 @@ import com.github.angads25.toggle.widget.LabeledSwitch;
 import java.io.IOException;
 
 public class OnlineMusic extends AppCompatActivity {
-    private TextView txtVw; // text on top
+    public static TextView txtVw; // text on top
     private EditText editText; // edit source - type URL
     private Button applyButton; // apply
     private Button saveButton; // save
@@ -47,7 +47,7 @@ public class OnlineMusic extends AppCompatActivity {
     public static final String TEXT = "text"; // text?
     public static final String SWITCH1 = "switch1"; // switch1, just for fun
 
-    public String text; // text??
+    public static String text; // text??
     private boolean switchOnOff, switchPlay; // ... no comment
 
     // creating a variable for

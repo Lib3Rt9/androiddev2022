@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.MediaController;
 import android.widget.SeekBar;
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity{
     @SuppressLint("StaticFieldLeak")
     static Button playMain, nextMain, prevMain;
 
+    static LinearLayout musicController;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +82,13 @@ public class MainActivity extends AppCompatActivity{
         nextMain = findViewById(R.id.nextMain);
         prevMain = findViewById(R.id.prevMain);
 
+        musicController = (LinearLayout) findViewById(R.id.musicController);
+
         runtimePermission();
 
-//        fini();
+        if (mediaPlayer != null) {
+            musicController.setVisibility(View.VISIBLE);
+        }
 
         titleSong.setText(sName);
 //        playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
@@ -130,7 +137,10 @@ public class MainActivity extends AppCompatActivity{
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Online.class));
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+                }
+                startActivity(new Intent(getApplicationContext(), test.class));
             }
         });
     }
@@ -145,6 +155,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onRestart() {
         super.onRestart();
         Log.i("MainActivity", "onRestart");
+
         Intent i = new Intent(MainActivity.this, MainActivity.class);  //your class
         startActivity(i);
         finish();
@@ -250,10 +261,6 @@ public class MainActivity extends AppCompatActivity{
         });
     }
 
-//    public void fini() {
-////        finishSong();
-//        onStart();
-//    }
     // --------------------------------------------------------------------------
     // A custom class extends BaseAdapter
     class personalizeAdapter extends BaseAdapter {
@@ -287,6 +294,4 @@ public class MainActivity extends AppCompatActivity{
             return vw;
         }
     }
-
-
 }

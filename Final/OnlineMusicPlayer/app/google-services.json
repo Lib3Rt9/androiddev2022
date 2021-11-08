@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "261684826476",
+    "project_id": "onlinemusicplayer-1147b",
+    "storage_bucket": "onlinemusicplayer-1147b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261684826476:android:f199dbe76084b784db2349",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.onlinemusicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261684826476-4glaf4oldi53vkg0hbnlop8nv1lska0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTH31OJTRfiWCMkABp_oVrpHLKtcNVpEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261684826476-4glaf4oldi53vkg0hbnlop8nv1lska0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

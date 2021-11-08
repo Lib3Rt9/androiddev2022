@@ -197,7 +197,8 @@ public class PlayActivity extends AppCompatActivity {
         });
 
         Log.i("PlayActivity", "onCreate");
-    }
+
+    } // end onCreate
 
     @Override
     protected void onStart() {
@@ -275,111 +276,14 @@ public class PlayActivity extends AppCompatActivity {
 
             // then the SEEKBAR
             seekMusicBar.setMax(mediaPlayer.getDuration());
-            mediaPlayer.start();
 
             //and PLAY
+            mediaPlayer.start();
             buttonPlay.setBackgroundResource(R.drawable.ic_baseline_pause_24);
         });
 
-        // FINISH SONG -----------------------------------------------------
-        // automatically next song when a song finished
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-//                buttonNext.performClick();
-
-                int curSong = i; // i = position of the song
-
-                // and keep CHANGING the song when FINISH
-                // check to shuffle song
-                if (shuffleFlag) {
-                    Random random = new Random();
-                    curSong = random.nextInt((songInLib.size() - 1) + 1);
-                    player(curSong);
-                }
-                // check to repeat song
-                else if (repeatFlag) {
-                    player(curSong);
-                }
-                // no shuffle or repeat = play next song as index
-                else {
-                    if (curSong < songInLib.size() - 1) {
-                        curSong++;
-                    } else {
-                        curSong = 0;
-                    }
-                }
-                player(curSong); // let's play
-
-//                Intent i = new Intent(PlayActivity.this, MainActivity.class);  //your class
-//                startActivity(i);
-//                finish();
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-            }
-        });
-
-        // UPDATE SEEKBAR --------------------------------------------------
-        // coloring the SEEKBAR
-        seekMusicBar.getProgressDrawable().setColorFilter(getResources().getColor(R.color.black),
-                PorterDuff.Mode.MULTIPLY);
-        seekMusicBar.getThumb().setColorFilter(getResources().getColor(R.color.black),
-                PorterDuff.Mode.SRC_IN);
-
-        // then update
-        seekMusicBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                // seek to ... progress
-                if (b) {
-                    mediaPlayer.seekTo(i);
-                    seekMusicBar.setProgress(i);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        // update seekbar every second
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (mediaPlayer != null) {
-                    try {
-//                        Log.i("Thread ", "Thread Called");
-                        // create new message to send to handler
-                        if (mediaPlayer.isPlaying()) {
-                            Message msg = new Message();
-                            msg.what = mediaPlayer.getCurrentPosition();
-                            handler.sendMessage(msg);
-                            sleep(1000);
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
+        finishSong();
+        seekbar();
     }
 
     // set CURRENT TIME -------------------------------------------------
@@ -416,6 +320,45 @@ public class PlayActivity extends AppCompatActivity {
             mediaPlayer.pause();
             buttonPlay.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
         }
+    }
+
+    // FINISH SONG -----------------------------------------------------
+    private void finishSong() {
+
+        // automatically next song when a song finished
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                buttonNext.performClick();
+
+//                int curSong = i; // i = position of the song
+//
+//                // and keep CHANGING the song when FINISH
+//                // check to shuffle song
+//                if (shuffleFlag) {
+//                    Random random = new Random();
+//                    curSong = random.nextInt((songInLib.size() - 1) + 1);
+//                    player(curSong);
+//                }
+//                // check to repeat song
+//                else if (repeatFlag) {
+//                    player(curSong);
+//                }
+//                // no shuffle or repeat = play next song as index
+//                else {
+//                    if (curSong < songInLib.size() - 1) {
+//                        curSong++;
+//                    } else {
+//                        curSong = 0;
+//                    }
+//                }
+//                player(curSong); // let's play
+
+//                Intent i = new Intent(PlayActivity.this, MainActivity.class);  //your class
+//                startActivity(i);
+//                finish();
+            }
+        });
     }
 
     // function NEXT -------------------------------------------------------
@@ -515,5 +458,58 @@ public class PlayActivity extends AppCompatActivity {
             btnRep.setImageResource(R.drawable.ic_baseline_repeat_blue);
             btnShuf.setImageResource(R.drawable.ic_baseline_shuffle_24);
         }
+    }
+
+    // UPDATE SEEKBAR --------------------------------------------------
+    private void seekbar() {
+
+        // coloring the SEEKBAR
+        seekMusicBar.getProgressDrawable().setColorFilter(getResources().getColor(R.color.black),
+                PorterDuff.Mode.MULTIPLY);
+        seekMusicBar.getThumb().setColorFilter(getResources().getColor(R.color.black),
+                PorterDuff.Mode.SRC_IN);
+
+        // then update
+        seekMusicBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                // seek to ... progress
+                if (b) {
+                    mediaPlayer.seekTo(i);
+                    seekMusicBar.setProgress(i);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        // update seekbar every second
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mediaPlayer != null) {
+                    try {
+//                        Log.i("Thread ", "Thread Called");
+                        // create new message to send to handler
+                        if (mediaPlayer.isPlaying()) {
+                            Message msg = new Message();
+                            msg.what = mediaPlayer.getCurrentPosition();
+                            handler.sendMessage(msg);
+                            sleep(1000);
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 }

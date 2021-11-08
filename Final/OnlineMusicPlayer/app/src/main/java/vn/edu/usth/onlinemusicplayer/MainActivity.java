@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity{
 
         runtimePermission();
 
+//        fini();
+
         titleSong.setText(sName);
 //        playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
 
@@ -124,12 +126,11 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-
         FloatingActionButton mFab = (FloatingActionButton) findViewById(R.id.floatingSearchButtonn);
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), OnlineMusic.class));
+                startActivity(new Intent(getApplicationContext(), Online.class));
             }
         });
     }
@@ -249,6 +250,10 @@ public class MainActivity extends AppCompatActivity{
         });
     }
 
+//    public void fini() {
+////        finishSong();
+//        onStart();
+//    }
     // --------------------------------------------------------------------------
     // A custom class extends BaseAdapter
     class personalizeAdapter extends BaseAdapter {

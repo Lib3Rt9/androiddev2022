@@ -5,6 +5,7 @@ import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonPrev;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.mediaPlayer;
 
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.sName;
+import static vn.edu.usth.onlinemusicplayer.test.mediaPlayerOnl;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity{
             musicController.setVisibility(View.VISIBLE);
         }
 
+        if (mediaPlayerOnl != null) {
+            mediaPlayerOnl.stop();
+        }
+
         titleSong.setText(sName);
 //        playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
 
@@ -104,15 +109,7 @@ public class MainActivity extends AppCompatActivity{
         playMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer.isPlaying()) {
-                    playMain.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
-                    mediaPlayer.pause();
-                }
-                else if (!mediaPlayer.isPlaying()){
-                    playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
-                    mediaPlayer.start();
-                }
-//                onRestart();
+                playMainButton();
             }
         });
 
@@ -292,6 +289,18 @@ public class MainActivity extends AppCompatActivity{
             textSong.setText(items[i]);
 
             return vw;
+        }
+    }
+
+    // set Activity for button PLAY in MAIN activity -----------------------------------------------
+    public void playMainButton() {
+        if (mediaPlayer.isPlaying()) {
+            playMain.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
+            mediaPlayer.pause();
+        }
+        else if (!mediaPlayer.isPlaying()){
+            playMain.setBackgroundResource(R.drawable.ic_baseline_pause_24);
+            mediaPlayer.start();
         }
     }
 }

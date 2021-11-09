@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textSong"
+            android:id="@+id/textSongOnl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
@@ -71,14 +71,14 @@
                 android:layout_centerInParent="true">
 
                 <ImageButton
-                    android:id="@+id/btnShuf"
+                    android:id="@+id/btnShufOnl"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:src="@drawable/ic_baseline_shuffle_24" />
 
                 <ImageButton
-                    android:id="@+id/btnList"
+                    android:id="@+id/btnListOnl"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="100dp"
@@ -87,7 +87,7 @@
                     android:src="@drawable/ic_baseline_queue_music_dark" />
 
                 <ImageButton
-                    android:id="@+id/btnRep"
+                    android:id="@+id/btnRepOnl"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/songStart"
+                android:id="@+id/songStartOnl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -113,7 +113,7 @@
                 android:textSize="15dp" />
 
             <SeekBar
-                android:id="@+id/seekBar"
+                android:id="@+id/seekBarOnl"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -122,7 +122,7 @@
                 android:layout_marginBottom="20dp" />
 
             <TextView
-                android:id="@+id/songStop"
+                android:id="@+id/songStopOnl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -146,7 +146,7 @@
                 android:background="@drawable/ic_baseline_pause_24" />
 
             <Button
-                android:id="@+id/buttonNext"
+                android:id="@+id/buttonNextOnl"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
@@ -156,7 +156,7 @@
                 android:background="@drawable/ic_baseline_skip_next_24" />
 
             <Button
-                android:id="@+id/buttonPrev"
+                android:id="@+id/buttonPrevOnl"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
@@ -166,24 +166,24 @@
                 android:gravity="center" />
 
             <Button
-                android:id="@+id/buttonForward"
+                android:id="@+id/buttonForwardOnl"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
-                android:gravity="center"
-                android:layout_toEndOf="@id/buttonNext"
-                android:background="@drawable/ic_baseline_fast_forward_24" />
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/buttonNextOnl"
+                android:background="@drawable/ic_baseline_fast_forward_24"
+                android:gravity="center" />
 
             <Button
-                android:id="@+id/buttonRewind"
+                android:id="@+id/buttonRewindOnl"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:gravity="center"
-                android:layout_toStartOf="@id/buttonPrev"
-                android:background="@drawable/ic_baseline_fast_rewind_24" />
+                android:layout_toStartOf="@id/buttonPrevOnl"
+                android:background="@drawable/ic_baseline_fast_rewind_24"
+                android:gravity="center" />
 
         </RelativeLayout>
     </LinearLayout>

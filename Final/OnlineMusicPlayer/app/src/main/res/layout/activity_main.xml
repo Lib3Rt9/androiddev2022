@@ -58,7 +58,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/musicmain"/>
+                        android:src="@drawable/musicmain" />
 
                     <TextView
                         android:id="@+id/titleSong"
@@ -98,23 +98,23 @@
                         android:id="@+id/prevMain"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="15dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_centerVertical="true"
                         android:background="@drawable/ic_baseline_skip_previous_24" />
 
                     <Button
                         android:id="@+id/playMain"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="15dp"
                         android:layout_toEndOf="@+id/prevMain"
-                        android:layout_centerInParent="true"
-                        android:layout_centerVertical="true"
                         android:background="@drawable/play_pause" />
 
                     <Button

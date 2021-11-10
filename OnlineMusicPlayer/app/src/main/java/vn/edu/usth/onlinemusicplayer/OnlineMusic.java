@@ -36,7 +36,7 @@ import com.github.angads25.toggle.widget.LabeledSwitch;
 
 import java.io.IOException;
 
-import vn.edu.usth.onlinemusicplayer1.R;
+//import vn.edu.usth.onlinemusicplayer1.R;
 
 public class OnlineMusic extends AppCompatActivity {
     private TextView txtVw; // text on top

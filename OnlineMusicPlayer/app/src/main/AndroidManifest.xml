@@ -16,11 +16,12 @@
         android:theme="@style/Theme.OnlineMusicPlayer">
         <activity
             android:name=".OnlineMusic"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".PlayActivity"
             android:exported="true"
-            tools:ignore="Instantiatable" /> <!-- ? remove this line -->
+            tools:ignore="Instantiatable,MissingClass" /> <!-- ? remove this line -->
         <activity
             android:name=".MainActivity"
             android:exported="true">

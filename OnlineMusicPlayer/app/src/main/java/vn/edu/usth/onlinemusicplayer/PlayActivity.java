@@ -24,6 +24,8 @@ import com.gauravk.audiovisualizer.visualizer.BarVisualizer;
 import java.io.File;
 import java.util.ArrayList;
 
+//import vn.edu.usth.onlinemusicplayer1.R;
+
 public class PlayActivity extends AppCompatActivity {
 
     // create variables

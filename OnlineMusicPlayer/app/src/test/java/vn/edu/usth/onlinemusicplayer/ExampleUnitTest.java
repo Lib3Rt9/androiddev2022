@@ -1,4 +1,4 @@
-package vn.edu.usth.onlinemusicplayer;
+package vn.edu.usth.onlinemusicplayer1;
 
 import org.junit.Test;
 

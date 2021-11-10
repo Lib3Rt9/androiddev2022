@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OnlineMusicPlayer</string>
+    <string name="app_name">OnlineMusicPlayer1</string>
     <string name="title_activity_online">OnlineActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

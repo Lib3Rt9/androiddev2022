@@ -18,9 +18,9 @@ import java.util.List;
 
 public class YoutubeAPI extends YouTubeBaseActivity {
 
-    YouTubePlayerView mYouTubePlayerView;
+    YouTubePlayerView youTubePlayerView;
     Button btnYTPlay;
-    YouTubePlayer.OnInitializedListener mOnInitializedListener;
+    YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,10 @@ public class YoutubeAPI extends YouTubeBaseActivity {
         Log.i("YoutubeAPI", "onCreate");
 
         btnYTPlay = findViewById(R.id.btnYTPlay);
-        mYouTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlay);
+        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlay);
 
-        mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {
+        // initialize and play video
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.i("YoutubeAPI", "onClick: Done initializing");
@@ -43,7 +44,7 @@ public class YoutubeAPI extends YouTubeBaseActivity {
 //
 //                youTubePlayer.loadVideos(videoList);
 
-                youTubePlayer.loadVideo("Oj18EikZMuU&ab");
+                youTubePlayer.loadVideo("hdonNbzHHXE&ab_channel=K-391");
 
                 // add playlist
 //                youTubePlayer.loadPlaylist("'list'");
@@ -60,7 +61,7 @@ public class YoutubeAPI extends YouTubeBaseActivity {
             @Override
             public void onClick(View v) {
                 Log.i("YoutubeAPI", "initializing YT Player");
-                mYouTubePlayerView.initialize(YouTubeConfig.getApiKey(), mOnInitializedListener);
+                youTubePlayerView.initialize(YouTubeConfig.getApiKey(), onInitializedListener);
                 Log.i("YoutubeAPI", "onClick: Done initializing");
             }
         });

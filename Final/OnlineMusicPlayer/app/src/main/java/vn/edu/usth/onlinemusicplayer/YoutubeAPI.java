@@ -36,12 +36,14 @@ public class YoutubeAPI extends YouTubeBaseActivity {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.i("YoutubeAPI", "onClick: Done initializing");
 
-                List<String> videoList = new ArrayList<>();
-                videoList.add("hdonNbzHHXE&ab_channel=K-391");
-                videoList.add("Oj18EikZMuU&ab_channel=K-391");
-                videoList.add("Az-mGR-CehY&t=2s&ab_channel=K-391");
+//                List<String> videoList = new ArrayList<>();
+//                videoList.add("hdonNbzHHXE&ab_channel=K-391");
+//                videoList.add("Oj18EikZMuU&ab_channel=K-391");
+//                videoList.add("Az-mGR-CehY&t=2s&ab_channel=K-391");
+//
+//                youTubePlayer.loadVideos(videoList);
 
-                youTubePlayer.loadVideos(videoList);
+                youTubePlayer.loadVideo("Oj18EikZMuU&ab");
 
                 // add playlist
 //                youTubePlayer.loadPlaylist("'list'");

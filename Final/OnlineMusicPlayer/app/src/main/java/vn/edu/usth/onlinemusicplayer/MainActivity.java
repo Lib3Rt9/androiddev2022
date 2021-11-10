@@ -85,12 +85,36 @@ public class MainActivity extends AppCompatActivity{
             case R.id.actionAdd:
                 return true;
             case R.id.onlineMusicAct:
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+//                    mediaPlayer.release();
+                }
+                if (mediaPlayerOnl != null) {
+                    mediaPlayerOnl.stop();
+//                    mediaPlayerOnl.release();
+                }
                 startActivity(new Intent(getApplicationContext(), OnlineMusic.class));
                 return true;
             case R.id.actionMenu:
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+//                    mediaPlayer.release();
+                }
+                if (mediaPlayerOnl != null) {
+                    mediaPlayerOnl.stop();
+//                    mediaPlayerOnl.release();
+                }
                 startActivity(new Intent(getApplicationContext(), Database.class));
                 return true;
             case R.id.youtubeAPI:
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+//                    mediaPlayer.release();
+                }
+                if (mediaPlayerOnl != null) {
+                    mediaPlayerOnl.stop();
+//                    mediaPlayerOnl.release();
+                }
                 startActivity(new Intent(getApplicationContext(), YoutubeAPI.class));
                 return true;
             default:

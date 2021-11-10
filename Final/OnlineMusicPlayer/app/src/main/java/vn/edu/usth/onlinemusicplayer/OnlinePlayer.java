@@ -217,7 +217,7 @@ public class OnlinePlayer extends AppCompatActivity {
 
             // prepare and start media player
             mediaPlayerOnl.prepare();
-            mediaPlayerOnl.prepareAsync();
+//            mediaPlayerOnl.prepareAsync();
 
             // first is TOTAL TIME of the song
             endTimeOnl = createTimeOnl(mediaPlayerOnl.getDuration());

@@ -1,6 +1,7 @@
 package vn.edu.usth.onlinemusicplayer;
 
 import static vn.edu.usth.onlinemusicplayer.Database.mediaPlayerOnl;
+import static vn.edu.usth.onlinemusicplayer.OnlineMusic.mediaPlayerOnlOldVer;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonNext;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonPrev;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.mediaPlayer;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity{
     @SuppressLint("StaticFieldLeak")
     static Button playMain, nextMain, prevMain;
 
+    @SuppressLint("StaticFieldLeak")
     static LinearLayout musicController;
 
     @Override
@@ -79,10 +81,12 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.actionAdd:
+                onRestart();
                 return true;
             case R.id.onlineMusicAct:
                 if (mediaPlayer != null) {
@@ -148,6 +152,10 @@ public class MainActivity extends AppCompatActivity{
 
         if (mediaPlayerOnl != null) {
             mediaPlayerOnl.stop();
+        }
+
+        if (mediaPlayerOnlOldVer != null) {
+            mediaPlayerOnlOldVer.stop();
         }
 
         titleSong.setText(sName);

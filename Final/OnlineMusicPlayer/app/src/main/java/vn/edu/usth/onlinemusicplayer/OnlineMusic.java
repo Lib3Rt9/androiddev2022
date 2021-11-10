@@ -54,7 +54,7 @@ public class OnlineMusic extends AppCompatActivity {
     // button and media player
     Button playBtn, pauseBtn; // this buttons is not in use anymore
     Button btnPLAY;
-    MediaPlayer mediaPlayer; // player
+    static MediaPlayer mediaPlayerOnlOldVer; // player
     SeekBar seekMusicBarOnl; // seek bar, not really work
 
     TextView songStartOnl, songStopOnl; // timer
@@ -104,7 +104,7 @@ public class OnlineMusic extends AppCompatActivity {
             public void run() {
 
                 // extract value
-                int totalDuration = mediaPlayer.getDuration();
+                int totalDuration = mediaPlayerOnlOldVer.getDuration();
                 int currentPosition = 0;
 
                 // check and update every second
@@ -112,7 +112,7 @@ public class OnlineMusic extends AppCompatActivity {
                     try {
                         // sleep a little bit then check again
                         sleep(500);
-                        currentPosition = mediaPlayer.getCurrentPosition();
+                        currentPosition = mediaPlayerOnlOldVer.getCurrentPosition();
                         seekMusicBarOnl.setProgress(currentPosition);
                     }
                     catch (InterruptedException | IllegalStateException e) {
@@ -409,9 +409,9 @@ public class OnlineMusic extends AppCompatActivity {
 
                 else { // not checked = stop
                     //switch3.setBackgroundResource(R.drawable.ic_baseline_play_arrow_24);
-                    mediaPlayer.stop();
-                    mediaPlayer.reset();
-                    mediaPlayer.release();
+                    mediaPlayerOnlOldVer.stop();
+                    mediaPlayerOnlOldVer.reset();
+                    mediaPlayerOnlOldVer.release();
                     Toast.makeText(OnlineMusic.this, "Audio is stopped", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -503,21 +503,21 @@ public class OnlineMusic extends AppCompatActivity {
                 // "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
 
         // initializing media player
-        mediaPlayer = new MediaPlayer();
+        mediaPlayerOnlOldVer = new MediaPlayer();
 
         // below line is use to set the audio
         // stream type for our media player.
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mediaPlayerOnlOldVer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
 
         // below line is use to set our
         // url to our media player.
         try {
-            mediaPlayer.setDataSource(audioUrl);
+            mediaPlayerOnlOldVer.setDataSource(audioUrl);
             // below line is use to prepare
             // and start our media player.
-            mediaPlayer.prepare();
-            mediaPlayer.start();
+            mediaPlayerOnlOldVer.prepare();
+            mediaPlayerOnlOldVer.start();
             //startActivity(new Intent(getApplicationContext(), PlayActivity.class));
 
         } catch (IOException e) {

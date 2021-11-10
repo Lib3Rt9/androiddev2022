@@ -1,9 +1,9 @@
 package vn.edu.usth.onlinemusicplayer;
 
 import static java.lang.Thread.sleep;
-import static vn.edu.usth.onlinemusicplayer.test.mediaPlayerOnl;
-import static vn.edu.usth.onlinemusicplayer.test.songNameData;
-import static vn.edu.usth.onlinemusicplayer.test.songNameOnl;
+
+import static vn.edu.usth.onlinemusicplayer.Database.mediaPlayerOnl;
+import static vn.edu.usth.onlinemusicplayer.Database.songNameOnl;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +38,7 @@ public class OnlinePlayer extends AppCompatActivity {
     Button btnPlayOnl, btnNextOnl, btnPrevOnl, btnForwardOnl, btnRewindOnl;
     SeekBar seekBarOnl;
 
-    TextView songStartOnl, songStopOnl, textOnl;
+    static TextView songStartOnl, songStopOnl, textSongOnl;
     String cTimeOnl, endTimeOnl;
     int i;
 
@@ -63,6 +63,8 @@ public class OnlinePlayer extends AppCompatActivity {
         getSupportActionBar().setTitle("OnlinePlayer");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        textSongOnl = findViewById(R.id.textSongOnl);
 
         btnPlayOnl = findViewById(R.id.btnPlayOnl);
         seekBarOnl = findViewById(R.id.seekBarOnl);
@@ -208,12 +210,14 @@ public class OnlinePlayer extends AppCompatActivity {
         try {
             // set url to media player.
             mediaPlayerOnl.setDataSource(songNameOnl);
+            textSongOnl.setText(songNameOnl);
 
             // set the audio stream type for our media player.
             mediaPlayerOnl.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
             // prepare and start media player
             mediaPlayerOnl.prepare();
+            mediaPlayerOnl.prepareAsync();
 
             // first is TOTAL TIME of the song
             endTimeOnl = createTimeOnl(mediaPlayerOnl.getDuration());
@@ -258,11 +262,13 @@ public class OnlinePlayer extends AppCompatActivity {
 
     // function for NEXT --------------------------------------------------
     private void nextOnl() {
+        playSongData();
         Toast.makeText(this, "This function is updating...", Toast.LENGTH_SHORT).show();
     }
 
     // function for PREVIOUS ----------------------------------------------
     private void previousOnl() {
+        playSongData();
         Toast.makeText(this, "This function is updating...", Toast.LENGTH_SHORT).show();
     }
 

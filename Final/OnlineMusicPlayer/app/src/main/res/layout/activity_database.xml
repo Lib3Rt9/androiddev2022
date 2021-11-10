@@ -4,42 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2"
-    tools:context=".MainActivity">
+    tools:context=".Database"
+    android:background="@drawable/b2">
 
-    <!-- Musics in form of list -->
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/user_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="70dp"
-        android:background="@color/transWhite"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0.1dp"
-        android:padding="10dp">
-
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_marginBottom="70dp">
     </ListView>
-
-    <!-- This to change to Online -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingSearchButtonn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="500dp"
-        android:src="@drawable/ic_baseline_search_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingSearchButtonn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/ic_baseline_search_24" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,7 +28,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/musicController"
+                android:id="@+id/musicControllerOnl"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -64,19 +39,19 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/musicMain"
+                        android:id="@+id/musicMainOnl"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_margin="10dp"
                         android:src="@drawable/musicmain" />
 
                     <TextView
-                        android:id="@+id/titleSong"
+                        android:id="@+id/titleSongOnl"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@+id/musicMain"
+                        android:layout_toEndOf="@+id/musicMainOnl"
                         android:ellipsize="marquee"
                         android:marqueeRepeatLimit="marquee_forever"
                         android:padding="10dp"
@@ -89,7 +64,7 @@
                         android:textStyle="italic" />
 
                     <Button
-                        android:id="@+id/changeToPlayer"
+                        android:id="@+id/changeToPlayerOnl"
                         android:layout_width="230dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -105,7 +80,7 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/prevMain"
+                        android:id="@+id/prevMainOnl"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerVertical="true"
@@ -115,7 +90,7 @@
                         android:background="@drawable/ic_baseline_skip_previous_24" />
 
                     <Button
-                        android:id="@+id/playMain"
+                        android:id="@+id/playMainOnl"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
@@ -124,18 +99,18 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="15dp"
-                        android:layout_toEndOf="@+id/prevMain"
+                        android:layout_toEndOf="@+id/prevMainOnl"
                         android:background="@drawable/play_pause" />
 
                     <Button
-                        android:id="@+id/nextMain"
+                        android:id="@+id/nextMainOnl"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="15dp"
-                        android:layout_toEndOf="@+id/playMain"
+                        android:layout_toEndOf="@+id/playMainOnl"
                         android:background="@drawable/ic_baseline_skip_next_24" />
 
                 </RelativeLayout>
@@ -144,5 +119,4 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 </RelativeLayout>

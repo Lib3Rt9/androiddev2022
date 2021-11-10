@@ -1,11 +1,11 @@
 package vn.edu.usth.onlinemusicplayer;
 
+import static vn.edu.usth.onlinemusicplayer.Database.mediaPlayerOnl;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonNext;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.buttonPrev;
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.mediaPlayer;
 
 import static vn.edu.usth.onlinemusicplayer.PlayActivity.sName;
-import static vn.edu.usth.onlinemusicplayer.test.mediaPlayerOnl;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -137,7 +137,18 @@ public class MainActivity extends AppCompatActivity{
                 if (mediaPlayer != null) {
                     mediaPlayer.stop();
                 }
-                startActivity(new Intent(getApplicationContext(), test.class));
+                startActivity(new Intent(getApplicationContext(), Database.class));
+            }
+        });
+
+        FloatingActionButton mFab2 = (FloatingActionButton) findViewById(R.id.floatingSearchButtonn);
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mediaPlayer != null) {
+                    mediaPlayer.stop();
+                }
+                startActivity(new Intent(getApplicationContext(), Database.class));
             }
         });
     }

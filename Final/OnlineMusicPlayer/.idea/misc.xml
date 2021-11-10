@@ -17,6 +17,7 @@
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_shuffle_blue.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/list_bgr.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_abcdefghjtitrdpjhd.xml" value="0.2572463768115942" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_database.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_online.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_online_music.xml" value="0.152" />
@@ -27,7 +28,9 @@
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_song_list.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_swipe_left.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_test.xml" value="0.14375" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_test_spotify.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_url.xml" value="0.19067028985507245" />
+        <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/activity_youtube_api.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/content_abcdefghjtitrdpjhd.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/fragment_blank.xml" value="0.21739130434782608" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/layout/fragment_first.xml" value="0.2572463768115942" />

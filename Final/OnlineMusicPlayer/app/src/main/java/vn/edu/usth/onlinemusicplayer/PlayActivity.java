@@ -57,7 +57,7 @@ public class PlayActivity extends AppCompatActivity {
     static ArrayList<File> songInLib; // a list of files
     static String sName, cTime, endTime;
 
-    
+
 // << 1 >>
 
     // use for action bar -------------------------------------------------

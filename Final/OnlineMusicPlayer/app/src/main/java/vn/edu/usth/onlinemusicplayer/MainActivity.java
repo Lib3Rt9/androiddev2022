@@ -18,6 +18,8 @@ import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
@@ -68,6 +71,34 @@ public class MainActivity extends AppCompatActivity{
 
     static LinearLayout musicController;
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+//        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.actionAdd:
+                return true;
+            case R.id.onlineMusicAct:
+                startActivity(new Intent(getApplicationContext(), OnlineMusic.class));
+                return true;
+            case R.id.actionMenu:
+                startActivity(new Intent(getApplicationContext(), Database.class));
+                return true;
+            case R.id.youtubeAPI:
+                startActivity(new Intent(getApplicationContext(), YoutubeAPI.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+//        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

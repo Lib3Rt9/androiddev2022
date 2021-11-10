@@ -9,4 +9,25 @@
         app:showAsAction="ifRoom|withText"
         app:actionViewClass="android.widget.SearchView" />
 
+    <item
+        android:id="@+id/actionAdd"
+        android:icon="@drawable/ic_baseline_add_24"
+        app:showAsAction="ifRoom"
+        android:title="Add"/>
+
+    <item
+        android:id="@+id/actionMenu"
+        app:showAsAction="never"
+        android:title="DatabaseAct"/>
+
+    <item
+        android:id="@+id/onlineMusicAct"
+        app:showAsAction="never"
+        android:title="OnlineMusic"/>
+
+    <item
+        android:id="@+id/youtubeAPI"
+        app:showAsAction="never"
+        android:title="YouTubeAPI"/>
+
 </menu>

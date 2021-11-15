@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_database.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_maps.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_online.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_online_music.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_online_player.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_play.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_test_spotify.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/activity_youtube_api.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/layout/list_item.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/FLOS IGNIS/AndroidStudioProjects/Final/OnlineMusicPlayer/app/src/main/res/menu/menu.xml" value="0.275" />
         <entry key="..\:/Users/FLOS IGNIS/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.1" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_library_music_24.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/FLOS IGNIS/OnlineMusicPlayer/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.2911458333333333" />
